@@ -1,0 +1,10 @@
+<% redmine_silent_statuses_list_of_active_statuses.each do |status| %>
+  <p style="padding-left: 180px">
+    <%= label_tag "settings[#{status.name.parameterize.underscore}]", status.name %>
+    <% if defined?(settings) && settings && settings.include?(status.name.parameterize.underscore) %>
+      <%= check_box_tag "settings[#{status.name.parameterize.underscore}]" , status.name.parameterize.underscore, true %>
+    <% else %>
+      <%= check_box_tag "settings[#{status.name.parameterize.underscore}]" , status.name.parameterize.underscore, false %>
+    <% end %>
+  </p>
+<% end %>
