@@ -1,4 +1,4 @@
-require_dependency '../../plugins/silent_statuses/app/models/journal_patch'
+require_dependency '../../plugins/redmine_silent_statuses/app/models/journal_patch'
 
 Redmine::Plugin.register :silent_statuses do
   name 'Silent Statuses plugin'
