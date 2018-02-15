@@ -9,7 +9,7 @@ module JournalPatch
 
   module JournalExtraMethods
     def send_notification_with_silence
-      silent_mode = Setting.plugin_silent_statuses.include?(new_status.name.parameterize.underscore)
+      silent_mode = new_status.present? && Setting.plugin_silent_statuses.include?(new_status.name.parameterize.underscore)
       if !silent_mode && notify? && (Setting.notified_events.include?('issue_updated') ||
           (Setting.notified_events.include?('issue_note_added') && notes.present?) ||
           (Setting.notified_events.include?('issue_status_updated') && new_status.present?) ||
