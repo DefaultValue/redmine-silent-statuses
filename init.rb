@@ -4,7 +4,7 @@ require_dependency '../../plugins/silent_statuses/app/helpers/silent_statuses_se
 Redmine::Plugin.register :silent_statuses do
   name 'Silent Statuses plugin'
   author 'Default Value'
-  description 'This plugin provides functionality to disable notifications regarding moving issue into certain statuses.'
+  description 'This plugin provides functionality to disable notifications on issues getitng certain statuses.'
   version '1.0'
   author_url 'http://default-value.com/'
 
