@@ -1,5 +1,5 @@
 <div class="box tabular settings">
-  <h3>Disable email notifications on changing issue status to:</h3>
+  <h3><%= l(:disable_notifications) %></h3>
   <% redmine_silent_statuses_list_of_active_statuses.each do |status| %>
     <p style="padding-left: 250px">
       <%= label_tag "settings[#{status.name.parameterize.underscore}]", status.name %>
@@ -13,8 +13,8 @@
 </div>
 <div class="box tabular settings">
   <p style="padding-left: 250px">
-    <%= label_tag "settings[notify_additional_changes]", 'Notify on additional issue changes' %>
+    <%= label_tag "settings[notify_additional_changes]", l(:notify_on) %>
     <%= check_box_tag "settings[notify_additional_changes]" , 'notify_additional_changes', (defined?(settings) && settings && settings.include?('notify_additional_changes')) %>
-    <span class="tip">(Send email notifications if any other field in issue has been changed)</span>
+    <span class="tip"><%= l(:notify_hint) %></span>
   </p>
 </div>
